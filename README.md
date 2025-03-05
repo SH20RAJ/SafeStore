@@ -2,7 +2,7 @@
 
 SafeStore is an npm package that allows users to encrypt and decrypt files directly from the command line using a password. It is designed to be lightweight, easy to use, and secure. One of its primary use cases is encrypting `.env` files before pushing them to version control systems like GitHub. You can now push your env files to GitHub without the hassle of managing secrets in repository settings or storing them locally. Just remember one password to encrypt and decrypt your files - perfect for small projects where you don't want to deal with complex secrets management and data loss in case files are deleted from PC.
 
-  ## Features
+## Features
 - **File Encryption:** Securely encrypt any file using XOR-based encryption with password-derived keys.
 - **File Decryption:** Easily decrypt encrypted files with the correct password.
 - **Salt and IV:** Automatically includes salt and initialization vector (IV) with the encrypted data for secure decryption.
