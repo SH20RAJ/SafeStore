@@ -1,0 +1,46 @@
+{
+  "name": "safestore",
+  "version": "2",
+  "description": "A lightweight and secure CLI tool for encrypting and decrypting files using AES-256 encryption",
+  "main": "file-encryption-cli.js",
+  "bin": {
+    "safestore2": "./file-encryption-cli.js",
+    "safestore": "./file-encryption-cli.js",
+    "safe": "./file-encryption-cli.js"
+  },
+  "scripts": {
+    "encrypt": "node file-encryption-cli.js encrypt",
+    "decrypt": "node file-encryption-cli.js decrypt"
+  },
+  "keywords": [
+    "encryption",
+    "decryption",
+    "security",
+    "cli",
+    "env",
+    "environment-variables",
+    "file-encryption",
+    "aes-256",
+    "crypto"
+  ],
+  "author": {
+    "name": "Shaswat Raj",
+    "email": "sh20raj@gmail.com",
+    "url": "https://github.com/sh20raj"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sh20raj/safestore.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sh20raj/safestore/issues"
+  },
+  "homepage": "https://github.com/sh20raj/safestore#readme",
+  "dependencies": {
+    "crypto": "^1.0.1"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

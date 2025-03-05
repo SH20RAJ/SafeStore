@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 // file-encryption-cli.js
 
 const fs = require('fs');

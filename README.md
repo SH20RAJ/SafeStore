@@ -1,6 +1,6 @@
 # SafeStore
 
-SafeStore is an npm package that allows users to encrypt and decrypt files directly from the command line using a password. It is designed to be lightweight, easy to use, and secure. One of its primary use cases is encrypting `.env` files before pushing them to version control systems like GitHub.
+SafeStore is an npm package that allows users to encrypt and decrypt files directly from the command line using a password. It is designed to be lightweight, easy to use, and secure. One of its primary use cases is encrypting `.env` files before pushing them to version control systems like GitHub. You can now push your env files to GitHub without the hassle of managing secrets in repository settings or storing them locally. Just remember one password to encrypt and decrypt your files - perfect for small projects where you don't want to deal with complex secrets management and data loss in case files are deleted from PC.
 
 ## Features
 - **File Encryption:** Securely encrypt any file using AES-256 encryption.
@@ -9,14 +9,18 @@ SafeStore is an npm package that allows users to encrypt and decrypt files direc
 - **Convenient CLI:** Simple command-line interface for encryption and decryption operations.
 
 ## Installation
-To use SafeStore, you need Node.js installed on your machine. Clone this repository or download the script.
+Install SafeStore globally using npm:
+
+```bash
+npm install -g safestore
+```
 
 ## Usage
 Run the following commands from your terminal:
 
 ### Encrypt a File
 ```bash
-node file-encryption-cli.js encrypt <inputFile> <outputFile> <password>
+npx safestore encrypt <inputFile> <outputFile> <password>
 ```
 - `<inputFile>`: Path to the file you want to encrypt.
 - `<outputFile>`: Path to save the encrypted file.
@@ -24,12 +28,12 @@ node file-encryption-cli.js encrypt <inputFile> <outputFile> <password>
 
 Example:
 ```bash
-node file-encryption-cli.js encrypt .env .env.enc mySecretPassword
+npx safestore encrypt .env .env.safe mySecretPassword
 ```
 
 ### Decrypt a File
 ```bash
-node file-encryption-cli.js decrypt <inputFile> <outputFile> <password>
+npx safestore decrypt <inputFile> <outputFile> <password>
 ```
 - `<inputFile>`: Path to the encrypted file.
 - `<outputFile>`: Path to save the decrypted file.
@@ -37,14 +41,14 @@ node file-encryption-cli.js decrypt <inputFile> <outputFile> <password>
 
 Example:
 ```bash
-node file-encryption-cli.js decrypt .env.enc .env mySecretPassword
+npx safestore decrypt .env.safe .env mySecretPassword
 ```
 
 ### Use Cases
 1. **Securely Store Environment Variables:** Encrypt your `.env` file before pushing it to a public repository.
    - Example:
      ```bash
-     node file-encryption-cli.js encrypt .env .env.enc mySecretPassword
+     npx safestore encrypt .env .env.enc mySecretPassword
      git add .env.enc
      git commit -m "Add encrypted .env file"
      ```
