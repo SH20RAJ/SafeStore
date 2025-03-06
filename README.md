@@ -15,7 +15,7 @@ Have you ever found yourself managing multiple projects with large node_modules 
 Install SafeStore globally using npm:
 
 ```bash
-npm install -g safestore2
+npm install -g safestore
 ```
 
 ## Usage
@@ -32,7 +32,7 @@ It will ask you for the file path, password and operation type.
 Or you can use either of these commands:
 
 ```bash
-npx safestore2 encrypt <inputFile> <outputFile> <password>
+npx safestore encrypt <inputFile> <outputFile> <password>
 ```
 - `<inputFile>`: Path to the file you want to encrypt.
 - `<outputFile>`: Path to save the encrypted file.
@@ -40,12 +40,12 @@ npx safestore2 encrypt <inputFile> <outputFile> <password>
 
 Example:
 ```bash
-npx safestore2 encrypt .env .env.safe mySecretPassword
+npx safestore encrypt .env .env.safe mySecretPassword
 ```
 
 ### Decrypt a File
 ```bash
-npx safestore2 decrypt <inputFile> <outputFile> <password>
+npx safestore decrypt <inputFile> <outputFile> <password>
 ```
 - `<inputFile>`: Path to the encrypted file.
 - `<outputFile>`: Path to save the decrypted file.
@@ -53,14 +53,14 @@ npx safestore2 decrypt <inputFile> <outputFile> <password>
 
 Example:
 ```bash
-npx safestore2 decrypt .env.safe .env mySecretPassword
+npx safestore decrypt .env.safe .env mySecretPassword
 ```
 
 ### Use Cases
 1. **Securely Store Environment Variables:** Encrypt your `.env` file before pushing it to a public repository.
    - Example:
      ```bash
-     npx safestore2 encrypt .env .env.enc mySecretPassword
+     npx safestore encrypt .env .env.enc mySecretPassword
      git add .env.enc
      git commit -m "Add encrypted .env file"
      ```
