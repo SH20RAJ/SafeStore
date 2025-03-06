@@ -2,6 +2,9 @@
 
 SafeStore is an npm package that allows users to encrypt and decrypt files directly from the command line using a password. It is designed to be lightweight, easy to use, and secure. One of its primary use cases is encrypting `.env` files before pushing them to version control systems like GitHub. You can now push your env files to GitHub without the hassle of managing secrets in repository settings or storing them locally. Just remember one password to encrypt and decrypt your files - perfect for small projects where you don't want to deal with complex secrets management and data loss in case files are deleted from PC.
 
+### Real-World Problem It Solves
+Have you ever found yourself managing multiple projects with large node_modules directories consuming precious disk space? While tools like `npkill` help clean up these directories,let's say in frustration there's a real risk of accidentally deleting entire project folders in the cleanup process. While your code might be safely stored on GitHub, your `.env` files - which are typically gitignored - could be lost forever. Managing these through GitHub Secrets for each project can become tedious and time-consuming. This was the exact problem that inspired SafeStore: now you can simply use `npx safe` to encrypt your `.env` files and safely push them to GitHub. Just remember your password, and you'll never lose your environment variables again, even if you accidentally delete your local projects!
+
 ## Features
 - **File Encryption:** Securely encrypt any file using XOR-based encryption with password-derived keys.
 - **File Decryption:** Easily decrypt encrypted files with the correct password.
@@ -19,6 +22,15 @@ npm install -g safestore2
 Run the following commands from your terminal:
 
 ### Encrypt a File
+
+Just run this command:
+```bash
+npx safe
+```
+It will ask you for the file path, password and operation type.
+
+Or you can use either of these commands:
+
 ```bash
 npx safestore2 encrypt <inputFile> <outputFile> <password>
 ```

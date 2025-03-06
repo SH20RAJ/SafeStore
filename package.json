@@ -1,12 +1,13 @@
 {
-  "name": "safestore2",
-  "version": "2.0.4",
+  "name": "safestore",
+  "version": "2.0.5",
   "description": "A lightweight and secure CLI tool for encrypting and decrypting files using AES-256 encryption",
   "main": "file-encryption-cli.js",
   "bin": {
-    "safestore2": "./file-encryption-cli.js",
-    "safestore": "./file-encryption-cli.js",
-    "safe": "./file-encryption-cli.js"
+    "safestore2": "file-encryption-cli.js",
+    "lockbox": "file-encryption-cli.js",
+    "safestore": "file-encryption-cli.js",
+    "safe": "file-encryption-cli.js"
   },
   "scripts": {
     "encrypt": "node file-encryption-cli.js encrypt",
