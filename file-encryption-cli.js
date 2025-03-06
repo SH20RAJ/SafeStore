@@ -140,23 +140,32 @@ function promptUser(question) {
         });
     });
 }
-
 async function main() {
-    console.log(colors.bold_cyan('\n🔐 SafeStore - Secure File Encryption Tool\n'));
+    console.log(colors.bold_cyan(`
+🔐 SafeStore - Secure File Encryption Tool
+`));
     
     const args = process.argv.slice(2);
     let command, inputFile, outputFile, password;
 
-    if (args.length < 4) {
+    if (args.length === 0) {
         console.log(colors.colorize('Interactive Mode - Please provide the required details\n', 'yellow'));
 
         command = (await promptUser('Enter command (e/encrypt, d/decrypt): ')).toLowerCase();
         inputFile = await promptUser('Enter input file path: ');
         outputFile = await promptUser('Enter output file path: ');
         password = await promptUser('Enter password: ');
-    } else {
+    } else if (args.length === 3) {
+        // Password-only prompt mode
+        [command, inputFile, outputFile] = args;
+        command = command.toLowerCase();
+        password = await promptUser('Enter password: ');
+    } else if (args.length === 4) {
         [command, inputFile, outputFile, password] = args;
         command = command.toLowerCase();
+    } else {
+        console.log(colors.colorize('\n❌ Invalid number of arguments. Use either:\n1. No arguments for interactive mode\n2. Three arguments (command, input, output) for password prompt\n3. Four arguments (command, input, output, password) for direct execution\n', 'red'));
+        process.exit(1);
     }
 
     // Support shorthand commands

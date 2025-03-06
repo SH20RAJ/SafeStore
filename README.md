@@ -43,6 +43,26 @@ Example:
 npx safestore encrypt .env .env.safe mySecretPassword
 ```
 
+### Using Custom Scripts
+You can add custom scripts to your project's `package.json` for convenient encryption and decryption. The tool will prompt for the password while using predefined file paths:
+
+```json
+{
+  "scripts": {
+    "safe:encrypt": "npx safestore encrypt .env .env.safe",
+    "safe:decrypt": "npx safestore decrypt .env.safe .env"
+  }
+}
+```
+
+Then simply run:
+```bash
+npm run safe:encrypt
+# or
+npm run safe:decrypt
+```
+You'll only need to enter the password when prompted.
+
 ### Decrypt a File
 ```bash
 npx safestore decrypt <inputFile> <outputFile> <password>

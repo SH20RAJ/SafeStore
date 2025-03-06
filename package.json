@@ -1,6 +1,6 @@
 {
   "name": "safestore",
-  "version": "2.0.5",
+  "version": "2.0.8",
   "description": "A lightweight and secure CLI tool for encrypting and decrypting files using AES-256 encryption",
   "main": "file-encryption-cli.js",
   "bin": {
@@ -11,7 +11,9 @@
   },
   "scripts": {
     "encrypt": "node file-encryption-cli.js encrypt",
-    "decrypt": "node file-encryption-cli.js decrypt"
+    "decrypt": "node file-encryption-cli.js decrypt",
+    "safe:encrypt": "npx safestore encrypt .env .env.safe",
+    "safe:decrypt": "npx safestore decrypt .env.safe .env"
   },
   "keywords": [
     "encryption",
@@ -38,11 +40,6 @@
     "url": "https://github.com/sh20raj/safestore/issues"
   },
   "homepage": "https://github.com/sh20raj/safestore#readme",
-  "dependencies": {
-    "chalk": "^4.1.2",
-    "crypto": "^1.0.1",
-    "ora": "^5.4.1"
-  },
   "engines": {
     "node": ">=12.0.0"
   }
