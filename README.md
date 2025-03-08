@@ -1,5 +1,7 @@
 # SafeStore
 
+[![npm version](https://badge.fury.io/js/safestore.svg)](https://badge.fury.io/js/safestore)[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)[![Downloads](https://img.shields.io/npm/dm/safestore.svg)](https://www.npmjs.com/package/safestore)[![GitHub issues](https://img.shields.io/github/issues/sh20raj/safestore)](https://github.com/sh20raj/safestore/issues)[![GitHub stars](https://img.shields.io/github/stars/sh20raj/safestore)](https://github.com/sh20raj/safestore/stargazers)[![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2FSafeStore&labelColor=%23f47373&countColor=%23dce775&style=flat-square)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2FSH20RAJ%2FSafeStore)
+
 SafeStore is an npm package that allows users to encrypt and decrypt files directly from the command line using a password. It is designed to be lightweight, easy to use, and secure. One of its primary use cases is encrypting `.env` files before pushing them to version control systems like GitHub. You can now push your env files to GitHub without the hassle of managing secrets in repository settings or storing them locally. Just remember one password to encrypt and decrypt your files - perfect for small projects where you don't want to deal with complex secrets management and data loss in case files are deleted from PC.
 
 ### Real-World Problem It Solves
